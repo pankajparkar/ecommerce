@@ -45,6 +45,19 @@ export default function Navigation() {
           >
             About
           </Link>
+          <Link
+            href="/demo"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              backgroundColor: '#ff9800',
+              padding: '4px 12px',
+              borderRadius: '4px',
+              fontWeight: 'bold'
+            }}
+          >
+            Demo 🎯
+          </Link>
         </div>
       </div>
     </nav>
