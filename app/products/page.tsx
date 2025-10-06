@@ -1,4 +1,5 @@
 import { Product } from "@/types/product";
+import Link from "next/link";
 
 // This is a SERVER Component - we can use async/await!
 async function getProducts(): Promise<Product[]> {
@@ -55,15 +56,18 @@ export default async function ProductsPage() {
         marginTop: '30px'
       }}>
         {products.map((product) => (
-          <div
+          <Link
             key={product.id}
+            href={`/products/${product.id}`}
             style={{
               border: '1px solid #ddd',
               borderRadius: '8px',
               padding: '16px',
               backgroundColor: 'white',
               display: 'flex',
-              flexDirection: 'column'
+              flexDirection: 'column',
+              textDecoration: 'none',
+              color: 'inherit'
             }}
           >
             {/* Product Image */}
@@ -120,7 +124,7 @@ export default async function ProductsPage() {
                 {product.rating.rate} ({product.rating.count} reviews)
               </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
