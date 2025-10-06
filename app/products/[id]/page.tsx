@@ -1,4 +1,5 @@
 import { Product } from "@/types/product";
+import AddToCartButton from "@/components/AddToCartButton";
 
 // Fetch single product by ID
 async function getProduct(id: string): Promise<Product> {
@@ -127,30 +128,7 @@ export default async function ProductDetailPage({ params }: Props) {
             </p>
           </div>
 
-          <button
-            style={{
-              width: '100%',
-              padding: '16px',
-              backgroundColor: '#2196f3',
-              color: 'white',
-              border: 'none',
-              borderRadius: '8px',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              cursor: 'pointer'
-            }}
-          >
-            Add to Cart
-          </button>
-
-          <p style={{
-            marginTop: '16px',
-            fontSize: '14px',
-            color: '#666',
-            textAlign: 'center'
-          }}>
-            (Note: This button doesn't work yet - we'll add interactivity next!)
-          </p>
+          <AddToCartButton product={product} />
         </div>
       </div>
 
